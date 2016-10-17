@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/leaflet.css"/>
     <link rel="stylesheet" href="css/Control.Opacity.css"/>
     <link rel="stylesheet" href="css/jquery-ui-1.10.3.custom.min.css"/>
+    <link rel="stylesheet" href="css/font-wso2.css">
     <style type="text/css">
         #openStreetMapId {
             height: 900px;
@@ -58,7 +59,7 @@
 
     //add base map
     function initialiseMap() {
-        baseMap = L.map('openStreetMapId').setView([40.691, -74.1847], 15);
+        baseMap = L.map('openStreetMapId').setView([6.909858, 79.852373], 17);
         L.tileLayer("http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
             maxZoom: 19,
             attribution: 'Map data © <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, CC-BY-SA.'
@@ -97,10 +98,10 @@
 
     //add svg map
     function addSVGMap(swLat, swLong, neLat, neLong) {
-        svgMapUrl = 'images/Map_of_the_Mall_at_the_World_Trade_Center.svg';
+        svgMapUrl = 'Map_marker.png';
         svgMapBounds = [[swLat, swLong], [neLat, neLong]];
 //        alert("svg map bounds: " + svgMapBounds);
-        svgMapOverlay = L.imageOverlay(svgMapUrl, svgMapBounds, {opacity: 0.5})
+        svgMapOverlay = L.imageOverlay(svgMapUrl, svgMapBounds, {opacity: 1.0})
                 .addTo(baseMap);
         setValuesToTextBox();
 
